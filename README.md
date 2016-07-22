@@ -1,2 +1,2 @@
 # dotfiles
-Configuration
+Configuration files for handy updating and distribution

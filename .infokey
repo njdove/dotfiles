@@ -1,0 +1,6 @@
+#var
+highlight-searches=On
+mouse=On
+scroll-behavior=Page Only
+link-style=blue
+active-link-style=blue,standout

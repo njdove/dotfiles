@@ -1,0 +1,48 @@
+vbell on
+autodetach on  # Detatch screen if SSH dies
+startup_message off
+bell_msg "Bell in window %n"
+ignorecase	# Ignore case in searches
+
+# Escape key is CTRL+'-'; repeat for literal CTRL+'-'
+escape 
+
+# ALT-n, ALT-p for next, previous windows; ALT-o for other
+bindkey ^[n next
+bindkey ^[p prev
+bindkey ^[o other
+
+# escape X removes a region, while (^)j and (^)k move up and down
+bind X remove
+bind j focus down
+bind ^j focus down
+bind k focus up
+bind ^k focus up
+
+# ALT-c for new screen, ALT-z for detatch
+bindkey ^[c screen
+bindkey ^[z detach
+
+defscrollback 3000	# 3000 lines of history
+compacthist on		# Suppress trailing blanks
+
+# windows named using shell's escaped title -or- "shell"
+shelltitle '$ |shell'
+
+# Configure the status line to emulate text-based "tabs":
+#   0 shell  1 info  \2 vim/  3 shell
+#
+# See info screen for full documentation
+#   %{Wc}......white foreground, cyan background
+#   %-w........all windows until the current window
+#   %{+b cW}...bold, cyan foreground, white background
+#   %50>.......mark this position for truncation, and keep it in the middle (50%) when status bar is full
+#   \%n %t/....the "tab" - the (%n)ame and (%t)itle between '\' and '/'
+#   %{-b Wc}...no bold, white foreground, cyan background
+#   %+w........the windows after the current window
+#   %<.........truncate here; do not fill with spaces
+hardstatus alwayslastline "%{Wc}%-w%{+b cW}%50>\%n %t/%{-b Wc}%+w%<"
+
+# ALT-s turns status bar off, ALT-S turns it back on
+bindkey ^[s hardstatus ignore
+bindkey ^[S hardstatus alwayslastline

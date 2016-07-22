@@ -1,0 +1,31 @@
+# * Documentation: info '(bash.info)Readline Init File Syntax'
+# * Re-read with Ctrl-x,Ctrl-r
+# * "bind -v" to view Readline varibles
+# * "bind -p" to print key bindings
+
+set bell-style visible
+set colored-stats on
+set completion-ignore-case on
+set mark-symlinked-directories on
+set match-hidden-files off
+set show-all-if-ambiguous on
+set show-all-if-unmodified on
+set visible-stats on
+
+# Up and down will try to complete the line
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+Tab: menu-complete
+"\e[Z": "\e-\C-i"  # shift-tab is menu-complete-backwards (ESC,-1,Ctrl-i)
+
+# So you can type things like:
+#   $ touch a b c
+#   $ file !*[space]
+# to interactively complete history
+$if Bash
+  Space: magic-space
+$endif
+
+$if Ttytter
+  Tab: complete
+$endif
