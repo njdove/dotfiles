@@ -14,7 +14,7 @@
 [ -r /etc/bashrc ] && . /etc/bashrc  # CentOS
 
 # For when mechanisms override or ignore .profile and .bash_profile
-umask 0027
+umask 0007
 ulimit -c 0  # Disable core dumps
 
 # If not running interactively, don't do anything
@@ -83,8 +83,6 @@ case $TERM in
     SCREENTITLE='\[\ek\e\\\]\[\ek\w\e\\\]'
 esac
 export PS1="${PS1}${SCREENTITLE}$ "
-
-export PROMPT_DIRTRIM=3  # Limit \w to 3 directory components
 
 # if running in a capable terminal, echo the running process to set up the title
 case "$TERM" in

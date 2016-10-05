@@ -19,7 +19,7 @@ fi
 echo $PATH | grep -q sbin || export PATH=/usr/local/sbin:/usr/sbin:/sbin:$PATH
 
 
-umask 0027
+umask 0007
 ulimit -c 0  # Disable core dumps
 
 # Source .bashrc if it's readable
