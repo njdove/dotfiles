@@ -127,7 +127,6 @@ alias dmesgh='dmesg --human'
 alias dmesgc='dmesg --color=always'
 
 # "..*" to go to parent directories
-alias ..='cd ../..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
