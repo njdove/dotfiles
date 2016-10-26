@@ -1,13 +1,3 @@
-#
-# Default twm configuration file; needs to be kept small to conserve string
-# space in systems whose compilers don't handle medium-sized strings.
-#
-# Sites should tailor this file, providing any extra title buttons, menus, etc.
-# that may be appropriate for their environment.  For example, if most of the
-# users were accustomed to uwm, the defaults could be set up not to decorate
-# any windows and to use meta-keys.
-#
-
 NoGrabServer
 RestartPreviousState
 DecorateTransients
@@ -18,13 +8,20 @@ IconFont "-adobe-helvetica-bold-r-normal--*-70-*-*-*-*-*-*"
 IconManagerFont "-adobe-helvetica-bold-r-normal--*-70-*-*-*"
 #ClientBorderWidth
 
-SortIconManager
-ShowIconManager
-IconManagerGeometry "1024x50+0-0" 10
+SortIconManager  # Alphabetize Icon Manager "task bar"
+ShowIconManager  # Display the Icon Manager "task bar" by default
+IconManagerGeometry "1024x25+0-0" 10
 IconifyByUnmapping
 
-RightTitleButton ":delete" = f.delete
-LeftTitleButton ":menu" = f.menu "windowops"
+NoDefaults  # No default titlebuttons and bindings
+LeftTitleButton   ":menu"    =  f.menu     "windowops"
+RightTitleButton  ":resize"  =  f.resize
+RightTitleButton  ":dot"     =  f.iconify
+RightTitleButton  ":delete"  =  f.delete
+
+NoTitle { "TWM Icon Manager" }
+
+RandomPlacement  # Pseudo-random window placement rather than an outline
 
 Color
 {
