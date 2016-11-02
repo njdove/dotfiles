@@ -23,24 +23,28 @@ NoTitle { "TWM Icon Manager" }
 
 RandomPlacement  # Pseudo-random window placement rather than an outline
 
+AutoRelativeResize  # Resize without crossing window borders
+
 Color
 {
     BorderColor "slategrey"
-    DefaultBackground "rgb:2/a/9"
+    BorderTileBackground "#999999"
+    BorderTileForeground "#666666"
+    DefaultBackground "#2266aa"
     DefaultForeground "gray85"
-    TitleBackground "rgb:2/a/9"
+    TitleBackground "#2266aa"
     TitleForeground "gray85"
-    MenuBackground "rgb:2/a/9"
+    MenuBackground "#2266aa"
     MenuForeground "gray85"
     MenuBorderColor "slategrey"
     MenuTitleBackground "gray70"
-    MenuTitleForeground "rgb:2/a/9"
-    IconBackground "rgb:2/a/9"
+    MenuTitleForeground "#2266aa"
+    IconBackground "#2266aa"
     IconForeground "gray85"
     IconBorderColor "gray85"
-    IconManagerBackground "rgb:2/a/9"
+    IconManagerBackground "#2266aa"
     IconManagerForeground "gray85"
-    IconManagerHighlight "rgb:a/2/9"
+    IconManagerHighlight "#aa2299"
 }
 
 #
