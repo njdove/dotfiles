@@ -9,5 +9,5 @@ export XKL_XMODMAP_DISABLE=1
 export LC_ALL=C  # Corrected giant title bars; space for max character size?
 #/etc/X11/Xsession
 
-/usr/bin/twm&
-/usr/bin/xterm -geometry +0+0
+/usr/bin/jwm&
+/usr/bin/xterm -geometry 80x25+0+0
