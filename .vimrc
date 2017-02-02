@@ -58,11 +58,12 @@ set noequalalways		" do not equalize windows on split
 set nomodeline			" Avoid modeline security issues
 set ruler			" show the cursor position all the time
 set shiftwidth=2		" indent 2 spaces
-set showbreak=+			" delimit column 0 of wrapped lines
+set showbreak=__		" delimit column 0 of wrapped lines
 set showcmd			" display incomplete commands
 set showmatch			" highlight matching (){}'
 set smartindent
 set smarttab
+set spellfile=~/.vim-wordlist.single.add
 set splitbelow			" when splitting, put window below current window
 set tabstop=8			" tab stops at 8 spaces
 set ttyfast			" smoother redraws, more bandwidth
@@ -83,3 +84,16 @@ highlight DiffText	ctermfg=white
 " column, virtual column, percent
 set statusline=%<%f\ %h%m%r%=%y\ %-12.(%l,%c%V%)\ %P
 
+if exists("&breakindent")
+  set breakindent
+" set breakindentopt=shift:2
+endif
+
+set encoding=utf-8
+
+if exists("&renderoptions")
+  set renderoptions=type:directx,gamma:1.25,contrast:.25,geom:1,renmode:4,taamode:1
+endif
+
+
+" see https://sanctum.geek.nz/arabesque/gracefully-degrading-vimrc/
