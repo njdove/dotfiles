@@ -75,10 +75,11 @@ if has("spell")
   set spellfile=~/.vim-wordlist.single.add
 endif
 
-" The diff text is illegible when the default color is black
-highlight DiffAdd	ctermfg=white
-highlight DiffChange	ctermfg=white
-highlight DiffText	ctermfg=white
+" Correct illegible text for my terminals' color schemes
+highlight DiffAdd	ctermfg=black
+highlight DiffChange	ctermfg=black
+highlight DiffText	ctermfg=black
+highlight Search	ctermfg=black
 
 " filename, help flag, modified flag, read-only flag, right-align (%=)
 " column, virtual column, percent
@@ -91,6 +92,7 @@ endif
 
 set encoding=utf-8
 
+" Enable ClearType on Windows
 if exists("&renderoptions")
   set renderoptions=type:directx,gamma:1.25,contrast:.25,geom:1,renmode:4,taamode:1
 endif
