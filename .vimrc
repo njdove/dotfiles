@@ -67,7 +67,7 @@ set spellfile=~/.vim-wordlist.single.add
 set splitbelow			" when splitting, put window below current window
 set tabstop=8			" tab stops at 8 spaces
 set ttyfast			" smoother redraws, more bandwidth
-set whichwrap+=<,>,[,]		" <left>, <right> wrap in Normal and Insert
+set whichwrap=b,s,h,l,<,>,[,]	" <left>, <right> wrap in Normal and Insert
 set wildmenu			" put tab completions in status bar
 set winminheight=0		" split window minimum height
 
