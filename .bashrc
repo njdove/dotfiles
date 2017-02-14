@@ -84,10 +84,12 @@ case $TERM in
 esac
 export PS1="${PS1}${SCREENTITLE}$ "
 
+export PROMPT_DIRTRIM=3
+
 # if running in a capable terminal, echo the running process to set up the title
 case "$TERM" in
   *xterm* | *screen* | cygwin | *gnome* | konsole )  # These terminals parse PROMPT_COMMAND
-    PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD/$HOME/~}\007"'
+    PROMPT_COMMAND='echo -ne "\033]0;${HOSTNAME}: ${PWD/$HOME/~}\007"'
 esac
 
 # enable color support of ls and also add handy aliases
