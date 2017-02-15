@@ -1,0 +1,5 @@
+#!/bin/sh
+# Create relative links from ~/dotfiles/.* in $HOME
+
+cd $HOME
+ln -sf $(find .dotfiles -mindepth 1 -maxdepth 1 -type f -regex '.*/\.[^.]*') .
