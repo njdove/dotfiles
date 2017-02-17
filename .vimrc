@@ -28,6 +28,9 @@ if strlen(matchstr($VIM, ".*\\"))
   endfunction
 endif
 
+" Prevent smartindent from un-indenting comments, per "help smartindent"
+inoremap # X<C-H>#
+
 " Alt-Space is System menu
 if has("gui")
   set guifont=Ubuntu\ Mono\ 12
