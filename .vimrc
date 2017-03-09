@@ -92,10 +92,10 @@ endif
 
 set encoding=utf-8
 
-" Enable ClearType on Windows
-if exists("&renderoptions")
-  set renderoptions=type:directx,gamma:1.25,contrast:.25,geom:1,renmode:4,taamode:1
-endif
-
+" Disable ClearType for now - resizes are too slow
+" " Enable ClearType on Windows
+" if exists("&renderoptions")
+"   set renderoptions=type:directx,gamma:1.25,contrast:.25,geom:1,renmode:4,taamode:1
+" endif
 
 " see https://sanctum.geek.nz/arabesque/gracefully-degrading-vimrc/
