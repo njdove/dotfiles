@@ -33,7 +33,8 @@ inoremap # X<C-H>#
 
 " Alt-Space is System menu
 if has("gui")
-  set guifont=Ubuntu\ Mono\ 12
+" set guifont=Ubuntu\ Mono\ 12
+  set guifont=Ubuntu_Mono:h10:cANSI:qDRAFT
   noremap <M-Space> :simalt ~<CR>
   inoremap <M-Space> <C-O>:simalt ~<CR>
   cnoremap <M-Space> <C-C>:simalt ~<CR>
