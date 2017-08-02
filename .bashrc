@@ -198,6 +198,7 @@ fi
 
 which vim >& /dev/null && export EDITOR=vim || export EDITOR=vi
 
+export PS_FORMAT='user,pid,ppid,pri,rss,vsz,sz,cputime,wchan,args'
 export BROWSER=elinks
 export auto_resume=t    # single word commands are resume candidates
 
