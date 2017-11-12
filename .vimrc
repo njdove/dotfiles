@@ -79,11 +79,14 @@ if has("spell")
   set spellfile=~/.vim-wordlist.single.add
 endif
 
-" Correct illegible text for my terminals' color schemes
-highlight DiffAdd	ctermfg=black
-highlight DiffChange	ctermfg=black
-highlight DiffText	ctermfg=black
-highlight Search	ctermfg=black
+" Syntax highlighting conflicts with diff highlighting
+if &diff
+  syntax off
+  highlight DiffAdd      ctermfg=white
+  highlight DiffChange   ctermfg=white
+  highlight DiffText     ctermfg=white
+  highlight Search       ctermfg=white
+endif
 
 " filename, help flag, modified flag, read-only flag, right-align (%=)
 " column, virtual column, percent
