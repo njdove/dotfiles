@@ -76,6 +76,9 @@ case "$TERM" in
 esac
 unset ROOT_ USER_ JOBS_ PATH_ HISTNUM_
 
+# Built with the help of https://dom111.github.io/grep-colors/
+export GREP_COLORS='sl=49;39:cx=49;37:mt=49;31;1;4:fn=49;35:ln=49;32;3:bn=49;38;5;105:se=49;36';
+
 # This escape sequence lets the shell give a title to screen. See "info '(screen)Dynamic Titles'".
 # It uses <Esc>-k <Esc>-\
 case $TERM in
