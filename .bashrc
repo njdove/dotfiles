@@ -85,9 +85,7 @@ case $TERM in
   *screen*)
     SCREENTITLE='\[\ek\e\\\]\[\ek\w\e\\\]'
 esac
-export PS1="${PS1}${SCREENTITLE}$ "
-
-export PROMPT_DIRTRIM=3
+export PS1="${PS1}${SCREENTITLE}\\$ "
 
 # if running in a capable terminal, echo the running process to set up the title
 case "$TERM" in
