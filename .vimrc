@@ -61,7 +61,7 @@ set matchpairs+=<:>
 set noequalalways		" do not equalize windows on split
 set nomodeline			" Avoid modeline security issues
 set ruler			" show the cursor position all the time
-set shiftwidth=2		" indent 2 spaces
+set shiftwidth=4		" indent 2 spaces
 set showbreak=__		" delimit column 0 of wrapped lines
 set showcmd			" display incomplete commands
 set showmatch			" highlight matching (){}'
