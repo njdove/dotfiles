@@ -1,8 +1,6 @@
 " Switch syntax highlighting on, when the terminal has colors
-" Also switch on highlighting the last used search pattern.
 if &t_Co > 2 || has("gui_running")
   syntax on
-  set hlsearch
 endif
 
 if has("autocmd")
@@ -33,15 +31,13 @@ inoremap # X<C-H>#
 
 " Alt-Space is System menu
 if has("gui")
-" set guifont=Ubuntu\ Mono\ 12
   set guifont=Ubuntu_Mono:h10:cANSI:qDRAFT
   noremap <M-Space> :simalt ~<CR>
   inoremap <M-Space> <C-O>:simalt ~<CR>
   cnoremap <M-Space> <C-C>:simalt ~<CR>
 endif
 
-" Windows default path ".,c:\tmp,c:\temp" isn't present in Vista; use user's
-" %TEMP%
+" Add $env:Temp to swap file list
 if strlen($TEMP)
   set directory=.,$TEMP
 end
@@ -53,10 +49,11 @@ set guioptions-=m               " no GUI menu
 set guioptions-=T               " no GUI toolbar
 set hidden                      " allow changed buffers to hide
 set history=50                  " keep 50 lines of command line history
+set hlsearch                    " Search highlighting
 set ignorecase                  " ignore case for searches, etc.
 set incsearch                   " do incremental searching
 set laststatus=2                " always show the status line
-set listchars=eol:$,tab:>_,trail:_,extends:+    " Appearance when 'list' is set
+set listchars=eol:$,tab:>_,trail:_    " Appearance when 'list' is set
 set listchars+=precedes:<,extends:>     " Vertical scrolling indicators
 set matchpairs+=<:>
 set noequalalways               " do not equalize windows on split
