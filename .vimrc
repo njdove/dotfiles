@@ -1,8 +1,6 @@
 " Switch syntax highlighting on, when the terminal has colors
-" Also switch on highlighting the last used search pattern.
 if &t_Co > 2 || has("gui_running")
   syntax on
-  set hlsearch
 endif
 
 if has("autocmd")
@@ -33,47 +31,47 @@ inoremap # X<C-H>#
 
 " Alt-Space is System menu
 if has("gui")
-" set guifont=Ubuntu\ Mono\ 12
-  set guifont=Ubuntu_Mono:h10:cANSI:qDRAFT
+  set guifont=Ubuntu_Mono:h10:cANSI:qDRAFT,Consolas:h10:cANSI:qDRAFT
   noremap <M-Space> :simalt ~<CR>
   inoremap <M-Space> <C-O>:simalt ~<CR>
   cnoremap <M-Space> <C-C>:simalt ~<CR>
 endif
 
-" Windows default path ".,c:\tmp,c:\temp" isn't present in Vista; use user's
-" %TEMP%
+" Add $env:Temp to swap file list
 if strlen($TEMP)
   set directory=.,$TEMP
 end
 
-set autoindent			" always set autoindenting on
-set backspace=indent,eol,start	" allow backspace over autoindent, line breaks, start of insert
-set guioptions-=m		" no GUI menu
-set guioptions-=T		" no GUI toolbar
-set hidden			" allow changed buffers to hide
-set history=50			" keep 50 lines of command line history
-set ignorecase			" ignore case for searches, etc.
-set incsearch			" do incremental searching
-set laststatus=2		" always show the status line
-set listchars=eol:$,tab:>_,trail:_,extends:+	" Appearance when 'list' is set
-set listchars+=precedes:<,extends:>	" Vertical scrolling indicators
+set autoindent                  " always set autoindenting on
+set backspace=indent,eol,start  " allow backspace over autoindent, line breaks, start of insert
+set expandtab                   " use spaces instead of tabs
+set guioptions-=m               " no GUI menu
+set guioptions-=T               " no GUI toolbar
+set hidden                      " allow changed buffers to hide
+set history=50                  " keep 50 lines of command line history
+set hlsearch                    " Search highlighting
+set ignorecase                  " ignore case for searches, etc.
+set incsearch                   " do incremental searching
+set laststatus=2                " always show the status line
+set listchars=eol:$,tab:>_,trail:_    " Appearance when 'list' is set
+set listchars+=precedes:<,extends:>     " Vertical scrolling indicators
 set matchpairs+=<:>
-set noequalalways		" do not equalize windows on split
-set nomodeline			" Avoid modeline security issues
-set ruler			" show the cursor position all the time
-set shiftwidth=4		" indent 2 spaces
-set showbreak=__		" delimit column 0 of wrapped lines
-set showcmd			" display incomplete commands
-set showmatch			" highlight matching (){}'
+set noequalalways               " do not equalize windows on split
+set nomodeline                  " Avoid modeline security issues
+set ruler                       " show the cursor position all the time
+set shiftwidth=4                " indent 2 spaces
+set showbreak=__                " delimit column 0 of wrapped lines
+set showcmd                     " display incomplete commands
+set showmatch                   " highlight matching (){}'
 set smartindent
 set smarttab
 set spellfile=~/.vim-wordlist.single.add
-set splitbelow			" when splitting, put window below current window
-set tabstop=8			" tab stops at 8 spaces
-set ttyfast			" smoother redraws, more bandwidth
-set whichwrap=b,s,h,l,<,>,[,]	" <left>, <right> wrap in Normal and Insert
-set wildmenu			" put tab completions in status bar
-set winminheight=0		" split window minimum height
+set splitbelow                  " when splitting, put window below current window
+set tabstop=8                   " tab stops at 8 spaces
+set ttyfast                     " smoother redraws, more bandwidth
+set whichwrap=b,s,h,l,<,>,[,]   " <left>, <right> wrap in Normal and Insert
+set wildmenu                    " put tab completions in status bar
+set winminheight=0              " split window minimum height
 
 if has("spell")
   set spellfile=~/.vim-wordlist.single.add
