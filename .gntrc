@@ -1,0 +1,28 @@
+[general]
+mouse = 1
+
+[Finch]
+mouse = 1
+
+[GntWM::binding]
+a-N = window-next
+a-P = window-prev
+a-C = window-close
+a-W = window-list
+a-R = start-resize
+a-Q = wm-quit
+a-L = refresh-screen
+a-d = dump-screen
+a-, = shift-left
+a-. = shift-right
+a-a = action-list
+a-m = start-move
+a-r = start-resize
+a-q = wm-quit
+a-l = refresh-screen
+a-s = workspace-list
+a-t = window-tag
+a-T = place-tagged
+a-/ = help-for-widget
+a-c-j = window-scroll-down
+a-c-k = window-scroll-up
