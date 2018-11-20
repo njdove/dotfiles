@@ -6,14 +6,14 @@
 #
 # bash sources ~/.bashrc automatically for non-login interactive
 # shells, including those launched from a GUI. Place local settings in
-# ~/.bashrc.local, which is executed at the bottom of this file.
+# ~/.bashrc_local, which is executed at the bottom of this file.
 
 # Source the system-wide config; anything that follows will override.
 # Debian bash sources /etc/bash.bashrc (compiled with -DSYS_BASHRC)
 # make sure autocomplete directives are un-commented in that file.
 [ -r /etc/bashrc ] && . /etc/bashrc  # CentOS
 
-# For when mechanisms override or ignore .profile and .bash_profile
+# Some mechanisms override or ignore .profile and .bash_profile
 umask 0007
 ulimit -c 0  # Disable core dumps
 
@@ -127,9 +127,9 @@ alias grepc='grep --color=always'
 alias lsc='ls --color=always'
 
 if [ dmesg --color &>/dev/null ]; then
-    alias dmesg='dmesg --color'
-    alias dmesgh='dmesg --human'
-    alias dmesgc='dmesg --color=always'
+  alias dmesg='dmesg --color'
+  alias dmesgh='dmesg --human'
+  alias dmesgc='dmesg --color=always'
 fi
 
 # "..*" to go to parent directories
@@ -155,8 +155,8 @@ histgrep()
   else
     history | grep $1 |  tail -n 20
   fi
-
 }
+
 alias h=histgrep
 
 dirstack()
@@ -204,6 +204,7 @@ which vim >& /dev/null && export EDITOR=vim || export EDITOR=vi
 
 export PS_FORMAT='user,pid,ppid,pri,rss,vsz,sz,cputime,wchan,args'
 export BROWSER=elinks
+[ -z "$DISPLAY" ] && unset SSH_ASKPASS  # Unset GUI password prompt if running on console
 export auto_resume=t    # single word commands are resume candidates
 
 # Don't put duplicates or lines beginning with spaces in history
