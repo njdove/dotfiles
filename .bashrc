@@ -125,9 +125,12 @@ alias l='ls -CF'
 alias grep='grep --color=auto'
 alias grepc='grep --color=always'
 alias lsc='ls --color=always'
-alias dmesg='dmesg --color'
-alias dmesgh='dmesg --human'
-alias dmesgc='dmesg --color=always'
+
+if [ dmesg --color &>/dev/null ]; then
+    alias dmesg='dmesg --color'
+    alias dmesgh='dmesg --human'
+    alias dmesgc='dmesg --color=always'
+fi
 
 # "..*" to go to parent directories
 alias ...='cd ../..'
