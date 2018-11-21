@@ -10,10 +10,8 @@
 # SSH and text consoles. GUI "interactive non-login shells" use
 # ~/.bashrc.
 
-# Add ~/bin to the path if it's there and isn't already in the path
-if ! echo $PATH | grep "$HOME/bin" >/dev/null 2>&1; then
-  [ -d "$HOME/bin" ] && PATH=$HOME/bin:${PATH}
-fi
+# Add ~/bin to the path
+echo $PATH | grep "$HOME/bin" || [ -x "$HOME/bin" ] && PATH=$HOME/bin:${PATH}
 
 # Add the sbin directories
 echo $PATH | grep -q sbin || export PATH=/usr/local/sbin:/usr/sbin:/sbin:$PATH
