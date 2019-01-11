@@ -5,5 +5,6 @@ mouse=On
 scroll-behavior=Page Only
 link-style=cyan
 active-link-style=cyan,standout
+match-style=black,bgyellow
 nodeline=print
 scroll-behavior=Page Only
