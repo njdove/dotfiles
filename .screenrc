@@ -42,7 +42,3 @@ shelltitle '$ |shell'
 #   %+w........the windows after the current window
 #   %<.........truncate here; do not fill with spaces
 hardstatus alwayslastline "%{Wc}%-w%{+b cW}%50>\%n %t/%{-b Wc}%+w%<"
-
-# ALT-s turns status bar off, ALT-S turns it back on
-bindkey ^[s hardstatus ignore
-bindkey ^[S hardstatus alwayslastline
