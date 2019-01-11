@@ -4,6 +4,8 @@ startup_message off
 bell_msg "Bell in window %n"
 ignorecase	# Ignore case in searches
 
+# Allow bold colors
+attrcolor b ".I"
 # 256-color escape sequences. AB = background, AF=foreground
 termcapinfo xterm "Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm"
 

@@ -93,6 +93,11 @@ case "$TERM" in
     PROMPT_COMMAND='echo -ne "\033]0;${HOSTNAME}: ${PWD/$HOME/~}\007"'
 esac
 
+# If TERMCAP is set (e.g. screen, then make sure it advertises 256 colors)
+if [ -n "$TERMCAP" ]; then
+    export TERMCAP=$(echo $TERMCAP | sed 's/Co#8/Co#256/g')
+fi
+
 # enable color support of ls and also add handy aliases
 if [ "$TERM" != "dumb" ]; then
   for dc in dircolors gdircolors; do
