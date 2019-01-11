@@ -1,6 +1,9 @@
 #var
+# See "info info variables"
 highlight-searches=On
 mouse=On
 scroll-behavior=Page Only
 link-style=cyan
 active-link-style=cyan,standout
+nodeline=print
+scroll-behavior=Page Only
