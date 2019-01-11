@@ -23,7 +23,7 @@ bind ^k focus up
 bindkey ^[c screen
 bindkey ^[z detach
 
-defscrollback 3000	# 3000 lines of history
+defscrollback 10000	# 10000 lines of history
 compacthist on		# Suppress trailing blanks
 
 # windows named using shell's escaped title -or- "shell"

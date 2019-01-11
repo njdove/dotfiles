@@ -37,6 +37,9 @@ if has("gui")
   cnoremap <M-Space> <C-C>:simalt ~<CR>
 endif
 
+set t_Co=256                    " force 256-color support
+colorscheme desert
+
 " Add $env:Temp to swap file list
 if strlen($TEMP)
   set directory=.,$TEMP
