@@ -9,11 +9,12 @@
 # ~/.bashrc_local, which is executed at the bottom of this file.
 
 # Source the system-wide config; anything that follows will override.
-# Debian bash sources /etc/bash.bashrc (compiled with -DSYS_BASHRC)
-# make sure autocomplete directives are un-commented in that file.
-[ -r /etc/bashrc ] && . /etc/bashrc  # CentOS
+# Debian bash sources /etc/bash.bashrc (compiled with -DSYS_BASHRC).
+# Make sure autocomplete directives are un-commented in that file.
+[ -r /etc/bashrc ] && . /etc/bashrc  # RHEL/CentOS
+[ -r /etc/bashrc.bashrc ] && . /etc/bashrc  # Debian
 
-# Some mechanisms override or ignore .profile and .bash_profile
+# Some scenarios override or ignore .profile and .bash_profile
 umask 0007
 ulimit -c 0  # Disable core dumps
 
