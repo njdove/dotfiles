@@ -222,10 +222,13 @@ export HISTFILESIZE=0
 # checkhash - check to see if command is hashed; search path if no longer found
 # checkwinsize - check the window size after each command and
 # cmdhist - save multiline commands on one line in history
+# extglob - enable extended pattern matching: [?*+@!](PATTERN-LIST)
+# globstar - make "**" match files and directories, while "**/" matches only directories
+# gnu_errfmt - use GNU error format
 # histreedit - allow editing of failed history substitution
 # nocaseglob - case-insensitive file name completion
 # no_empty_cmd_completion - do not complete commands on an empty line,
-shopt -s cdspell checkhash checkwinsize cmdhist histreedit nocaseglob no_empty_cmd_completion
+shopt -s cdspell checkhash checkwinsize cmdhist extglob globstar gnu_errfmt histreedit nocaseglob no_empty_cmd_completion
 
 # checkjobs - list running jobs on attempt to exit shell
 # dirspell - attempt spelling correction when doing directory completion
