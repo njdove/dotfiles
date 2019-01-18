@@ -45,7 +45,7 @@ shelltitle '$ |shell'
 #   %{+b cK}...bold, cyan foreground, black background
 #   %50>.......mark this position for truncation, and keep it in the middle (50%) when status bar is full
 #   \%n %t/....the "tab" - the (%n)ame and (%t)itle between '\' and '/'
-#   %{-b Wc}...no bold, white foreground, cyan background
+#   %{-b Kc}...no bold, black foreground, cyan background
 #   %+w........the windows after the current window
 #   %<.........truncate here; do not fill with spaces
-hardstatus alwayslastline "%{Kc}%-w%{+b cK}%50>\%n %t/%{-b Wc}%+w%<"
+hardstatus alwayslastline "%{Kc}%-w%{+b cK}%50>\%n %t/%{-b Kc}%+w%<"
