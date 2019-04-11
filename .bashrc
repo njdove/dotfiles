@@ -217,6 +217,7 @@ export auto_resume=t    # single word commands are resume candidates
 export HISTCONTROL=ignoreboth
 export HISTIGNORE='h:h *:history*'
 export HISTFILESIZE=0
+export HISTTIMEFORMAT='[%F %T] '
 
 # autocd - change to a directory if it's the only command
 # cdspell - fix simple misspels in arguments to cd
