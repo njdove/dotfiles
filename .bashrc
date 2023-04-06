@@ -213,11 +213,15 @@ export BROWSER=elinks
 [ -z "$DISPLAY" ] && unset SSH_ASKPASS  # Unset GUI password prompt if running on console
 export auto_resume=t    # single word commands are resume candidates
 
-# Don't put duplicates or lines beginning with spaces in history
+# History configuration:
+# * no dupes
+# * don't keep lines starting with spaces
+# * timestamp "history"
+# * keep 5000 lines
 export HISTCONTROL=ignoreboth
 export HISTIGNORE='h:h *:history*'
-export HISTFILESIZE=0
 export HISTTIMEFORMAT='[%F %T] '
+export HISTSIZE=5000
 
 # autocd - change to a directory if it's the only command
 # cdspell - fix simple misspels in arguments to cd
