@@ -9,19 +9,16 @@
 umask 0027
 ulimit -c 0  # Disable core dumps
 
-# if running bash
+# Source ~/.bashrc if running bash
 if [ -n "$BASH_VERSION" ]; then
-    # include .bashrc if it exists
-    if [ -f "$HOME/.bashrc" ]; then
-	. "$HOME/.bashrc"
-    fi
+    [ -r ~/.bashrc ] && . ~/.bashrc
 fi
 
-# Add ~/bin to the path if it's there and isn't already in the path
-if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$PATH"
-fi
+# Prepend ~/.local/bin to the path -- this is the directory pipx uses for virtual installs
+echo $PATH | grep -q "$HOME/.local/bin" || [ -x "$HOME/.local/bin" ] && PATH=$HOME/.local/bin:${PATH}
 
-# Add the sbin directories
-echo $PATH | grep -q sbin || export PATH=/usr/local/sbin:/usr/sbin:/sbin:$PATH
+# Prepend ~/bin to the path
+echo $PATH | grep -q "$HOME/bin" || [ -x "$HOME/bin" ] && PATH=$HOME/bin:${PATH}
 
+# Append sbin directories
+echo $PATH | grep -q sbin || export PATH=$PATH:/usr/local/sbin:/usr/sbin:/sbin

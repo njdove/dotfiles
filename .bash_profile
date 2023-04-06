@@ -10,11 +10,14 @@
 # SSH and text consoles. GUI "interactive non-login shells" use
 # ~/.bashrc.
 
-# Add ~/bin to the path
-echo $PATH | grep "$HOME/bin" || [ -x "$HOME/bin" ] && PATH=$HOME/bin:${PATH}
+# Prepend ~/.local/bin to the path -- this is the directory pipx uses for virtual installs
+echo $PATH | grep -q "$HOME/.local/bin" || [ -x "$HOME/.local/bin" ] && PATH=$HOME/.local/bin:${PATH}
 
-# Add the sbin directories
-echo $PATH | grep -q sbin || export PATH=/usr/local/sbin:/usr/sbin:/sbin:$PATH
+# Prepend ~/bin to the path
+echo $PATH | grep -q "$HOME/bin" || [ -x "$HOME/bin" ] && PATH=$HOME/bin:${PATH}
+
+# Append sbin directories
+echo $PATH | grep -q sbin || export PATH=$PATH:/usr/local/sbin:/usr/sbin:/sbin
 
 umask 0007
 ulimit -c 0  # Disable core dumps
