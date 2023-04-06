@@ -7,6 +7,7 @@ files. I set this up for personal use, so your mileage may vary.
 Recommended use:
 
     $ git clone https://gitlab.sandia.gov/njdove/dotfiles.git .dotfiles
+    $ git clone 'https://github.com/njdove/dotfiles' .dotfiles
     $ .dotfiles/lndotfiles
 
 ## Shell Configuration
